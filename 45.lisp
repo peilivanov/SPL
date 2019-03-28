@@ -1,3 +1,7 @@
+;45. Предположим, что у имени города есть свойства х и у, которые содержат кооpдинаты
+;места нахождения города относительно некоторого начала координат.
+;Напишите функцию (РАССТОЯНИЕ a b), вычисляющую расстояние между городами а и b.
+
 (defun putprop (symbol_name prop_name value) (setf (get symbol_name prop_name) value))
 (defun getX (symbol_name) (get symbol_name `x))
 (defun getY (symbol_name) (get symbol_name `y))
