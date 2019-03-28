@@ -1,11 +1,11 @@
 ; 16. Определить функцию, добавляющую элементы одного списка во второй список, начиная с заданной позиции.;
 
-(defun append (x y)
+(defun appendp (x y)
 	(cond
 		(
 		  (null x) y)
-		(T(cons car x
-			appendp(cdr x)y)
+		(T(cons (car x)
+			(appendp(cdr x)y)
 		  ))))
 
 (defun insertp (list1 list2 i) 
