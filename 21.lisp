@@ -1,23 +1,10 @@
 ;21. Определите функцию, удаляющую из списка первое вхождение данного элемента на верхнем уровне.
 
-(defun deleter (list n)
-    ((lambda (first rest)
-	(cond 
-             ((null list) 
-                 nil
-             )
- 	     
-             ((= first n) 
-		 rest
-             )
-	     
-             (T 
-                 (cons first (deleter rest n))
-             )
-        ))
-        (car list)
-        (cdr list)
-    )
-)
+(defun del (L X)
+ (cond
+  ((null L) nil)
+  ((equal (car L) X) (cdr L))
+  (T (cons (car L) (del (cdr L) X)))))
 
-(print(deleter `(7 7 1 7) 1))
+(print (del '(7 7 (8 8)) 7)); (7 (8 8))
+(print (del '(7 7 (8 8)) 8)); (7 7 (8 8)) 
