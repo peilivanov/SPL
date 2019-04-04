@@ -1,10 +1,10 @@
 ; 28. Определите функцию, вычисляющую, сколько всего атомов в списке (списочной структуре).
 
-(defun count-atom (arr &optional (amm 0))
+(defun count-atom (arr )
     (cond
-        ((null arr) amm)
-        ((atom (car arr)) (count-atom (cdr arr) (1+ amm)))
-        (T (count-atom (cdr arr) amm))
+        ((null arr) 0)
+        ((atom (car arr)) (1+(count-atom (cdr arr) )))
+        (T (count-atom (cdr arr)))
     )
 )
 
