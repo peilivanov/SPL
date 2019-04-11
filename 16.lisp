@@ -1,5 +1,6 @@
 ; 16. Определить функцию, добавляющую элементы одного списка во второй список, начиная с заданной позиции.;
 
+
 (defun appendp (x y)
 	(cond
 		(
@@ -9,18 +10,16 @@
 		  ))))
 
 (defun insertp (src dest pos) 
-
-	(cond 
-		((null src) dest) 
+    (cond 
+		((null src) 
+         	dest) 
 			((null dest) src) 
 				((equal pos 0) 
-				
-			(appendp dest src)) 
-
-				(t (cons (car src) 
-
-					(insertp (cdr src) dest 
-                                        		(- pos 1)) 
+				(appendp dest src)) 
+                (t (cons (car src) 
+                     (insertp (cdr src)
+                               dest 
+                                (- pos 1)) 
 
 ) ) ) ) 
 
