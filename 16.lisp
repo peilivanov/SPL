@@ -8,20 +8,19 @@
 			(appendp(cdr x)y)
 		  ))))
 
-(defun insertp (list1 list2 i) 
+(defun insertp (src dest pos) 
 
 	(cond 
-		((null list1) list2) 
-			((null list2) list1) 
-				((equal i 0) 
+		((null src) dest) 
+			((null dest) src) 
+				((equal pos 0) 
 				
-				(appendp list2 list1)) 
+			(appendp dest src)) 
 
-				(t (cons (car list1) 
+				(t (cons (car src) 
 
-					(insertp (cdr list1) list2 
-
-					(- i 1)) 
+					(insertp (cdr src) dest 
+                                        		(- pos 1)) 
 
 ) ) ) ) 
 
