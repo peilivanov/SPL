@@ -1,18 +1,21 @@
 ;21. Определите функцию, удаляющую из списка первое вхождение данного элемента на верхнем уровне.
-
-(defun Del (mainList forDelete)
-   ((lambda (head tail) 
-      (cond 
-         ((null mainList) nil)
-         ((equal head forDelete) tail)
-         (t (cons head (Del tail forDelete)))
+     
+(defun del (lst a)
+   ((lambda (first last)
+           (cond
+              (
+               (null first) lst)
+                  (
+                   (or (not(atom first))(/= first a))
+                     (cons first (del last a))
+                  )
+               (t last)
+            )
       )
+    (car lst)
+    (cdr lst)
     )
-    (car mainList)
-    (cdr mainList)
-   )
 )
+                   
 
-(print( Del '((1 2 ) 4 5 (1 2 3) 6)  '(1 2 3))) ; ==> ((1 2) 4 5 6) 
-
- 
+(print( del '((1 2 2) 3 5) 3) ) ; ==> ((1 2 2) 5)
