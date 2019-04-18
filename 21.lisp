@@ -3,19 +3,16 @@
 (defun del (lst a)
    ((lambda (first last)
            (cond
-              (
-               (null first) lst)
-                  (
-                   (or (not(atom first))(/= first a))
-                     (cons first (del last a))
-                  )
-               (t last)
-            )
+              ((null first) lst)
+              ((and (atom first)(= first a)) last)
+              (t (cons first (del last a)))
+           )
       )
     (car lst)
     (cdr lst)
     )
 )
+
                    
 
 (print( del '((1 2 2) 3 5) 3) ) ; ==> ((1 2 2) 5)
