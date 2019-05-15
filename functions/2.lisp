@@ -7,7 +7,6 @@
              ((null lst) nil)
             
              (t(cons (funcall fn lst)   (maplist1 fn (cdr lst))))    ;->((3 2 1) (3 2) (3)) 
-            ;(t(append (funcall fn lst) (maplist fn (cdr lst))))    ;->(3 2 1 3 2 3)
           )
 )
 
