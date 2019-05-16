@@ -1,5 +1,5 @@
 
 Sum [] = 0
-Sum (b:bTail) = b + Sum bTail
+Sum (a:ab) = a + Sum ab
 
 main = print $ lstSum [1, 2, 3]
