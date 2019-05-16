@@ -1,5 +1,6 @@
 
 pluser [] = []
-pluser list = map(+1)list
+pluser lst = map(+1)lst
 
--- *Main> pluser [1, 2, 3]
+main = print $ pluser [1, 2, 3, 4, 5]
+--[2, 3, 4, 5, 6]
