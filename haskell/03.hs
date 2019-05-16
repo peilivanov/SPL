@@ -1,4 +1,4 @@
 chet [] = []
-chet (b:btail) =  b : chet (drop 1 btail)
+chet (a:ab) =  a : chet (drop 1 ab)
 
 main = print $ chet [1..10]
