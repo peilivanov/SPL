@@ -3,8 +3,7 @@
 
 
 (defun checker (pred lst)
-    (not
-        (null
+           (null
             (mapcan (lambda (x)  
                             (if (funcall pred x) NIL (list T)                             
                             )
@@ -12,7 +11,6 @@
             ) 
         ) 
      
-    )
 )
 
 (print (checker 'evenp  '(8 10  12))) ;T
